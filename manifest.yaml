@@ -1,0 +1,11 @@
+applications:
+  # Application
+  - name: demo-list
+    instance: 1
+    path: server
+    routes:
+      - route: demo-list.cfapps.us10.hana.ondemand.com
+    memory: 128M
+    timeout: 180
+    buildpacks:
+      - nodejs_buildpack
