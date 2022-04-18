@@ -1,5 +1,0 @@
----
-applications:
-  - name: demo
-random-route: true
-buildpack: nodejs_buildpack
