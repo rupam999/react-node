@@ -1,11 +1,5 @@
+---
 applications:
-  # Application
   - name: demo
-    instance: 1
-    path: server
-    routes:
-      - route: demo.cfapps.us10.hana.ondemand.com
-    memory: 128M
-    timeout: 180
-    buildpacks:
-      - nodejs_buildpack
+random-route: true
+buildpack: nodejs_buildpack
