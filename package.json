@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "react-node/server/index.js",
 	"scripts": {
-		"start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+		"start": "cd server && npm run start",
 		"start:prod": "cd server && npm run start",
 		"start:dev": "concurrently \"npm run server\" \"npm run client\" -k",
 		"client": "cd client && npm run start",
