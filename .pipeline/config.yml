@@ -20,7 +20,7 @@ stages:
     cfApiEndpoint: "https://api.cf.us10.hana.ondemand.com"
     cfOrg: "e329105ftrial"
     cfSpace: "dev"
-    cfAppName: "helloworld"
+    cfAppName: "Demo"
     cfCredentialsId: "cfdeploy"
     tmsUpload: false
 steps:
