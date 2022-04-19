@@ -7,7 +7,7 @@ import dotenv from 'dotenv';
 // Error Handler for Dev
 import errorHandler from 'errorhandler';
 // Routes
-import { dummyData } from './routes/dummy.js';
+// import { dummyData } from './routes/dummy.js';
 
 const app = express();
 const router = express.Router();
@@ -70,7 +70,7 @@ app.listen(app.get('port'), () => {
 /** ************************************************************ */
 /** **********************ALL Routes*************************** */
 /** ********************************************************** */
-dummyData(router);
+// dummyData(router);
 
 // Serving react on routes unused by previous routing
 app.get('*', (req, res) => {

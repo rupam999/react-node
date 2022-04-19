@@ -4,8 +4,7 @@ applications:
   - name: Demo
     instance: 1
     path: server
-    routes:
-      - route: Demo.cfapps.us10.hana.ondemand.com
+    random-route: true
     memory: 128M
     timeout: 180
     buildpacks:
