@@ -1,11 +1,11 @@
 ---
 applications:
   # Application
-  - name: helloworld
+  - name: Demo
     instance: 1
     path: server
     routes:
-      - route: helloworld.cfapps.us10.hana.ondemand.com
+      - route: Demo.cfapps.us10.hana.ondemand.com
     memory: 128M
     timeout: 180
     buildpacks:
