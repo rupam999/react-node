@@ -58,6 +58,8 @@ if (process.env.NODE_ENV === 'development') {
 	app.use(errorHandler());
 }
 
+console.log('ads', process.env.NODE_ENV);
+
 app.listen(app.get('port'), () => {
 	console.log(
 		`Node.js App is running at http://localhost:${app.get('port')} in ${app.get(
