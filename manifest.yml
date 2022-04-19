@@ -1,6 +1,12 @@
 ---
 applications:
-- name: helloworld
-  random-route: true
-  buildpack: nodejs_buildpack
-  memory: 512M
+  # Application
+  - name: helloworld
+    instance: 1
+    path: server
+    routes:
+      - route: helloworld.cfapps.us10.hana.ondemand.com
+    memory: 128M
+    timeout: 180
+    buildpacks:
+      - nodejs_buildpack
