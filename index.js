@@ -30,7 +30,7 @@ dotenv.config({
 
 /** **************REQUEST LOG*************** */
 if (process.env.NODE_ENV === 'development') {
-	app.use(morgan('dev'));
+	app.use(morgan('dev')); 
 }
 
 app.set('host', process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0');
