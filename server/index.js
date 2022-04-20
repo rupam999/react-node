@@ -6,8 +6,6 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 // Error Handler for Dev
 import errorHandler from 'errorhandler';
-// Routes
-// import { dummyData } from './routes/dummy.js';
 
 const app = express();
 const router = express.Router();
@@ -28,11 +26,6 @@ dotenv.config({
 	path: path.join(__dirname, '.env'),
 });
 
-/** **************REQUEST LOG*************** */
-if (process.env.NODE_ENV === 'development') {
-	app.use(morgan('dev'));
-}
-
 app.set('host', process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0');
 app.set('port', process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8000);
 
@@ -42,7 +35,6 @@ app.use(
 		extended: true,
 	})
 );
-
 // Serve our static build files
 app.use(express.static(path.join(__dirname, './build')));
 
@@ -58,13 +50,11 @@ if (process.env.NODE_ENV === 'development') {
 	app.use(errorHandler());
 }
 
-console.log('ads', process.env.NODE_ENV);
-
 app.listen(app.get('port'), () => {
 	console.log(
-		`Node.js App is running at http://localhost:${app.get('port')} in ${app.get(
-			'env'
-		)} server`
+		'Node.js App is running at http://localhost:%d',
+		app.get('port'),
+		app.get('env')
 	);
 	console.log('Press CTRL-C to stop\n');
 });
@@ -72,11 +62,10 @@ app.listen(app.get('port'), () => {
 /** ************************************************************ */
 /** **********************ALL Routes*************************** */
 /** ********************************************************** */
-// dummyData(router);
 
 // Serving react on routes unused by previous routing
 app.get('*', (req, res) => {
-	res.status(404).send('Custom 404 Page Not Found!');
+	res.sendFile(path.join(__dirname, './build/index.html'));
 });
 
 export default app;
