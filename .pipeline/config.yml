@@ -1,16 +1,15 @@
 ---
 general:
-  buildTool: "mta"
+  buildTool: 'npm'
 service:
-  buildToolVersion: "MBTJ8N12"
+  buildToolVersion: 'N16'
 stages:
   Build:
+    mavenExecuteStaticCodeChecks: false
     npmExecuteLint: false
   Additional Unit Tests:
     npmExecuteScripts: false
     karmaExecuteTests: false
-  Malware Scan:
-    malwareExecuteScan: true
   Acceptance:
     cloudFoundryDeploy: false
     uiVeri5ExecuteTests: false
@@ -18,14 +17,14 @@ stages:
     sonarExecuteScan: false
   Release:
     cloudFoundryDeploy: true
-    cfApiEndpoint: "https://api.cf.us10.hana.ondemand.com"
-    cfOrg: "e329105ftrial"
-    cfSpace: "dev"
-    cfAppName: "Demo"
-    cfCredentialsId: "cfdeploy"
+    cfApiEndpoint: 'https://api.cf.us10.hana.ondemand.com'
+    cfOrg: 'e329105ftrial'
+    cfSpace: 'dev'
+    cfAppName: 'Demo'
+    cfCredentialsId: 'cfdeploy'
     tmsUpload: false
 steps:
   artifactPrepareVersion:
-    versioningType: "cloud_noTag"
+    versioningType: 'cloud_noTag'
   cloudFoundryDeploy:
-    mtaDeployParameters: "-f --version-rule ALL"
+    mtaDeployParameters: '-f --version-rule ALL'
