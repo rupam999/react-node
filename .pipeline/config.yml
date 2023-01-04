@@ -16,7 +16,7 @@ stages:
   Compliance:
     sonarExecuteScan: false
   Release:
-    cloudFoundryDeploy: true
+    cloudFoundryDeploy: false
     cfApiEndpoint: 'https://api.cf.us10.hana.ondemand.com'
     cfOrg: 'e329105ftrial'
     cfSpace: 'dev'
